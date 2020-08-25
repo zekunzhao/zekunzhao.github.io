@@ -1,30 +1,962 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Zekun Zhao, Cool Guy</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm zekun!</h1>
-				<p>I'm best known as the cool guy from <em>A Touch of Fashion</em> Don't like me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:zzhao99@ucsc.edu">email</a></li>
-        		<li><a href="https://github.com/zekunzhao">github.com/zekunzhao</a></li>
-			</ul>
-		</footer>
-	</body>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="pic/X.png">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="keywords" content="Xin Wang, Eric Wang, Xin Eric Wang, Wang Xin, CS, UCSC, UC Santa Cruz, UCSB, University of California, ZJU, Zhejiang University, Computer Vision, NLP, Machine Learning, Reinforcement Learning"> 
+    <meta name="description" content="Xin Wang's Homepage">
+    <link rel="stylesheet" href="jemdoc.css" type="text/css" />
+    <title>Xin Wang</title>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-39824124-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <script type="text/javascript">
+       function toggle_visibility(id) {
+           var e = document.getElementById(id);
+           if(e.style.display == 'block')
+              e.style.display = 'none';
+           else
+              e.style.display = 'block';
+       }
+    </script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+    <div id="layout-menu">
+        <a 
+	   
+	   
+	   
+	   
+	   ="#">Home</a>
+        <a href="#publications">Publications</a>
+        <a href="#publications">Products</a>
+        <a href="#experience">Experience</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#service">Service</a>
+        <a href="./CV_Xin_Wang.pdf">CV</a>
+    </div>
+</nav>
+
+
+<div id="layout-content" style="margin-top:25px">
+
+<table>
+	<tbody>
+		<tr>
+			<td width="670">
+				<div id="toptitle">					
+					<h1>Xin (Eric) Wang<h1>
+				</div>
+
+				<h3>Assistant Professor</h3>
+				<p>
+					Department of Computer Science and Engineering </br>
+					Jack Baskin School of Engineering</br>
+                    University of California, Santa Cruz </br>
+					</br>
+					Email: xwang366 [at] ucsc [dot] edu
+				</p>
+				<p>
+					<a href="https://scholar.google.com/citations?user=YjqluE0AAAAJ&hl=en"><img src="pic/GoogleScholar.png" height="30px" style="margin-bottom:-3px"></a>
+                    <a href="https://www.linkedin.com/in/uniquexinwang"><img src="pic/LinkedIn.png" height="30px" style="margin-bottom:-3px"></a>
+                    <a href="https://github.com/eric-xw"><img src="pic/git.svg" height="30px" style="margin-bottom:-3px"></a>
+                    <iframe id="twitter-widget-4" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.59df888963e9d6219f6e6c7ff5d8b951.en.html#dnt=false&amp;id=twitter-widget-4&amp;lang=en&amp;screen_name=xwang_lk&amp;show_count=false&amp;show_screen_name=true&amp;size=m&amp;time=1524631465785" style="position: static; visibility: visible; width: 155px; height: 20px;" data-screen-name="TwitterDev"></iframe>
+				</p>
+			</td>
+			<td>
+				<img class="img-circle" src="pic/xin3.jpg" border="0" width="200px"></br>
+			</td>
+		<tr>
+	</tbody>
+</table>
+
+<br>
+
+<div id="bio">
+<h2>Bio</h2>
+Xin (Eric) Wang is an Assistant Professor of Computer Science and Engineering at <a href="https://www.soe.ucsc.edu/">UC Santa Cruz</a>. He obtained his Ph.D. at <a href="http://www.ucsb.edu/">UC Santa Barbara</a> and B.Eng. at <a href="http://www.zju.edu.cn/english/">Zhejiang University</a>, both in Computer Science.	
+<!-- Currently he is working with Professor <a href="http://www.cs.ucsb.edu/~william/">William Yang Wang</a> and <a href="http://www.cs.ucsb.edu/~yfwang/">Yuan-Fang Wang</a>.  -->
+He worked at Google AI, Facebook AI Research, Microsoft Research, and Adobe Research and has built wide collaboration with many industrial research labs. He received the <a href="http://cvpr2019.thecvf.com/program/main_conference#awards">CVPR Best Student Paper Award</a> in 2019.
+<!-- <br><br> -->
+
+<h3>Research Interests</h3>
+Xin's research interests include Natural Language Processing, Computer Vision, and Machine Learning, with an emphasis on building embodied AI agents that can communicate with humans using natural language to perform real-world tasks.
+<ul>
+    <li>
+        Natural Language Processing (natural language grounding, knowledge-based reasoning, multilingual understanding)
+    </li>
+    <li>
+        Computer Vision (vision and language, visual navigation and robotics, activity understanding)
+    </li>
+    <li>
+        Machine Learning (deep learning, self-supervised learning, reinforcement learning, multimodal machine learning)
+    </li>
+</ul>
+
+<h3>Hiring</h3>
+<font color="darkred">I am looking for highly-motivated students (esp. PhD students starting in Fall 2021). Please read <a href="./hiring.html">the information for <b>prospective students and visitors</b></a> and check out the most beautiful and unique campus of UCSC [<a href="https://www.youtube.com/watch?v=ogGSFZUjrwE">YouTube video</a> | <a href="https://www.bilibili.com/video/BV1xz411e77n?from=search&seid=1387866364580672367">bilibili video</a>]. </font>
+
+</div>
+
+<br>
+<div id="news">
+<h2>News</h2>
+<div style="overflow-y: scroll; height:300px;">
+<table>
+        <tr valign="top"> <td>[<b>NEW!</b>] </td> <td> Two papers were accepted to <a href="https://eccv2020.eu/">ECCV 2020</a> (the adversarial path sampling paper was seleted as Spotlight)!</td></tr>
+        <tr valign="top"> <td>[<b>NEW!</b>] </td> <td> I successfully defended my Ph.D. Thesis "Closing the Loop Between Language and Vision for Embodied Agents". Thanks to the committee and everyone who has helped me along the Ph.D. journey!</td></tr>
+        <tr valign="top"> <td>[<b>NEW!</b>] </td> <td> I am serving as Area Chair for <a href="https://2020.emnlp.org">EMNLP 2020</a>. </td></tr>
+        <tr valign="top"> <td>[<b>NEW!</b>] </td> <td> Organizing the <a href="https://alvr-workshop.github.io">workshop on Advances in Language and Vision Research (ALVR)</a> at ACL 2020. Welcome to participate on <b>July 9th</b>!</td></tr>
+        <tr valign="top"> <td>[<b>NEW!</b>] </td> <td> Two papers were accepted to <a href="http://cvpr2020.thecvf.com/">CVPR 2020</a> (the REVERIE paper was selected as Oral)! </td></tr>
+        <tr valign="top"> <td>[03/2020] </td> <td> Invited panelist at the <a href="https://www.nvidia.com/en-us/gtc/"> GPU Technology Conference (GTC) 2020. </td></tr>
+        <!-- <tr valign="top"> <td>[01/2020] </td> <td> Invited talk at Toyota Technological Institute at Chicago (TTIC).</td></tr> -->
+        <tr valign="top"> <td>[11/2019] </td> <td> Organizer of the <a href="https://languageandvision.github.io">workshop on Language & Vision with applications to Video Understanding</a> at CVPR 2020.</td></tr>
+        <tr valign="top"> <td>[11/2019] </td> <td> Organizer of the tutorial on Self-Supervised Deep Learning for NLP at AACL-IJCNLP 2020.</tr>
+        <tr valign="top"> <td>[10/2019] </td> <td> Invited speaker at the <a href="http://picdataset.com/challenge/index/">ICCV 2019 Workshop on Person In Context</a>.</td></tr> 
+        <!-- <tr valign="top"> <td>[10/2019] </td> <td> Invited speaker at the <a href="https://sites.google.com/site/iccv19clvllsmdc/home">ICCV 2019 Workshop on Closing the Loop Between Vision and Language</a>.</td></tr> -->
+        <tr valign="top"> <td>[06/2019] </td> <td> Recipient of the <b>CVPR 2019 Best Student Paper Award</b>. </td></tr> 
+        <tr valign="top"> <td>[06/2019] </td> <td> Co-Organizer of the <a href="https://sites.google.com/site/iccv19clvllsmdc/home">workshop on Closing the Loop Between Vision and Language</a> at ICCV 2019. </td></tr>
+        <tr valign="top"> <td>[06/2019] </td> <td> Invited talk at Facebook AI.  </td></tr> <!-- "Language & Vision: Learning to Describe and Interact with the World". -->
+        <tr valign="top"> <td>[01/2019] </td> <td> Session Chair for AAAI 2019 (natural language processing). </td></tr> 
+</table>
+</div>
+</div>
+
+<br><br>
+
+<div id="publications">
+<h2>Selected Publications</h2>
+
+<h3>
+<p>I have been publishing under Xin Eric Wang since 2020 (previously Xin Wang).</p>
+</h3>
+
+<h3>Preprint</h3>
+<table id="tbPublications" width="100%">
+    <tr>
+        <td width="100%">
+        <p>
+            <b>Multimodal Text Style Transfer for Outdoor Vision-and-Language Navigation</b><br>
+            Wanrong Zhu, Xin Eric Wang, Tsu-Jui Fu, An Yan, Pradyumna Narayana, Kazoo Sone, Sugato Basu, William Yang Wang<br>
+            <em>Tech report 2020</em><br>
+            <!-- <font color="red">Ranking 1st on the CVDN leaderboard</font><br> -->
+            [<a href="https://arxiv.org/abs/2007.00229">Paper</a>]
+            <!-- [<a href="https://github.com/google-research/valan">Code</a>] -->
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+        <p>
+            <b>Beyond Monolingual Vision-Language Navigation</b><br>
+            An Yan*, Xin Eric Wang*, Jiangtao Feng, Lei Li, William Yang Wang<br>
+            <em>Tech report 2020</em><br>
+        [<a href="http://arxiv.org/abs/1910.11301">Paper</a>]
+        [<a href="https://github.com/zzxslp/Bilingual-VLN">Dataset</a>]
+        </p>
+        </td>
+    </tr>
+
+</table>
+
+<h3>2020</h3>
+<table id="tbPublications" width="100%">
+
+    <tr>
+        <td width="100%">
+        <p>
+            <b>Environment-agnostic Multitask Learning for Natural Language Grounded Navigation</b><br>
+            Xin Eric Wang*, Vihan Jain*, Eugene Ie, William Yang Wang, Zornitsa Kozareva, Sujith Ravi<br>
+            <em>ECCV 2020</em><br>
+            <font color="red">Ranking 1st on the CVDN leaderboard</font><br>
+            [<a href="http://arxiv.org/abs/2003.00443">Paper</a>]
+            [<a href="https://github.com/google-research/valan">Code</a>]
+            [<a href="https://youtu.be/2B0c5VCRgLE">Video</a>]
+            [<a href="slides/ECCV20_env_mt.pdf">Slides</a>]
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+        <p>
+            <b>Counterfactual Vision-and-Language Navigation via Adversarial Path Sampling</b><br>
+            Tsu-Jui Fu, Xin Eric Wang, Matthew Peterson, Scott Grafton, Miguel Eckstein, William Yang Wang<br>
+            <em>ECCV 2020</em><br>
+            <font color="red">Spotlight presentation</font><br>
+        [<a href="https://arxiv.org/abs/1911.07308">Paper</a>]
+        [<a href="https://www.youtube.com/watch?v=eCPtNWDe2RQ">Video</a>]
+        [<a href="slides/aps.pdf">Slides</a>]
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+        <p>
+            <b>Relational Graph Learning for Grounded Video Description Generation</b><br>
+            Wenqiao Zhang, Xin Eric Wang, Siliang Tang, Haizhou Shi, Haocheng Shi, Jun Xiao, Yueting Zhuang, William Yang Wang<br>
+            <em>ACM MM 2020</em><br>
+            <font color="red">Oral Presentation</font><br>
+            <!-- [<a href="http://arxiv.org/abs/2003.00443">Paper</a>] -->
+            <!-- [<a href="https://github.com/google-research/valan">Code</a>] -->
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+        <p>
+            <b> REVERIE: Remote Embodied Visual Referring Expression in Real Indoor Environments</b><br>
+            Yuankai Qi, Qi Wu, Peter Anderson, <b>Xin Wang</b>, William Yang Wang, Chunhua Shen, Anton van den Hengel<br>
+            <em>CVPR 2020</em><br>
+            <font color="red">Oral presentation</font><br>
+        [<a href="https://arxiv.org/abs/1904.10151">Paper</a>]
+        [<a href="https://github.com/YuankaiQi/REVERIE">Code</a>]
+        [<a href="https://www.youtube.com/watch?v=UWYTLZUgxjY">Video</a>]
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+        <p>
+            <b>Unsupervised Reinforcement Learning of Transferable Meta-Skills for Embodied Navigation</b><br>
+            Juncheng Li, <b>Xin Wang</b>, Siliang Tang, Haizhou Shi, Fei Wu, Yueting Zhuang, William Yang Wang<br>
+            <em>CVPR 2020</em><br>
+        [<a href="https://arxiv.org/abs/1911.07450">Paper</a>]
+        [<a href="https://www.youtube.com/watch?v=gJkMDyNYdIM">Video</a>]
+        </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+        <!-- <img src="indexpics/KGZS.png" width="285px" height="140px" style="box-shadow: 4px 4px 8px #888"> -->
+        <!-- </td> -->
+        <!-- <td> -->
+            <p>
+                <b>Vision-Language Navigation Policy Learning and Adaptation</b> <br>
+                <b>Xin Wang</b>, Qiuyuan Huang, Asli Celikyilmaz, Jianfeng Gao, Dinghan Shen, Yuan-Fang Wang, William Yang Wang, Lei Zhang <br>
+                <em> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2020</em> <br>
+                <font color="red">Journal version of the CVPR 2019 Best Student Paper</font>
+            <p></p>
+            <p> 
+            <!-- [<a href="https://arxiv.org/abs/2001.02332">paper</a>] -->
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b> Generative Adversarial Zero-Shot Relational Learning for Knowledge Graphs</b> <br>
+                Pengda Qin, <b>Xin Wang</b>, Wenhu Chen, Chunyun Zhang, Weiran Xu, William Yang Wang<br>
+                <em> AAAI 2020</em> <br>
+                <font color="red">Oral presentation</font><br>
+            [<a href="https://arxiv.org/abs/2001.02332">Paper</a>]
+            [<a href="https://github.com/Panda0406/Zero-shot-knowledge-graph-relational-learning">Code</a>]
+            </p>
+        </td>
+    </tr>
+</table>
+
+<h3>2019</h3>
+<table>
+    <tr>
+        <td width="100%">
+            <p>
+                <b>TIGEr: Text-to-Image Grounding for Image Caption Evaluation </b> <br>
+                Ming Jiang, Qiuyuan Huang, Lei Zhang, <b>Xin Wang</b>, Pengchuan Zhang, Zhe Gan, Jana Diesner, Jianfeng Gao<br>
+                <em> EMNLP-IJCNLP 2019</em> <br>
+            [<a href="https://arxiv.org/abs/1909.02050">Paper</a>]
+            [<a href="https://github.com/SeleenaJM/CapEval">Code</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('tiger_bibtex');">bibtex</a>]
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b>VATEX: A Large-Scale, High-Quality Multilingual Dataset for Video-and-Language Research</b> <br>
+                <b>Xin Wang</b>*, Jiawei Wu*, Junkun Chen, Lei Li, Yuan-Fang Wang, William Yang Wang<br>
+                <em> ICCV 2019</em> <br>
+                <font color="red">Oral presentation</font><br>
+            [<a href="https://arxiv.org/abs/1904.03493">Paper</a>]
+            [<a href="http://vatex-challenge.org">Website</a>]
+            [<a href="https://www.youtube.com/watch?v=oFDF1yT0T-4&t=1m12s">Video</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('vatex_bibtex');">bibtex</a>]
+            <div id='vatex_bibtex' style="display:none; font-size:small;">
+                @InProceedings{Wang_2019_ICCV, <br>
+                author = {Wang, Xin and Wu, Jiawei and Chen, Junkun and Li, Lei and Wang, Yuan-Fang and Wang, William Yang}, <br>
+                title = {VaTeX: A Large-Scale, High-Quality Multilingual Dataset for Video-and-Language Research},<br>
+                booktitle = {The IEEE International Conference on Computer Vision (ICCV)},<br>
+                month = {October},<br>
+                year = {2019}<br>
+                }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b>Reinforced Cross-Modal Matching and Self-Supervised Imitation Learning for Vision-Language Navigation</b> <br>
+                <b>Xin Wang</b>, Qiuyuan Huang, Asli Celikyilmaz, Jianfeng Gao, Dinghan Shen, Yuan-Fang Wang, William Yang Wang, Lei Zhang <br>
+                <em>CVPR 2019</em> <br>
+                <font color="red">Best Student Paper (1/5160=0.02%)</font><br>
+            [<a href="https://arxiv.org/abs/1811.10092">Paper</a>]
+            [<a href="http://www.youtube.com/watch?v=Je5LlZlqUt8&t=26m20s">Video</a>]
+            <!-- [<a>Code</a>] -->
+            [<a href="javascript:void(0)" onclick="toggle_visibility('rcm_bibtex');">bibtex</a>]
+            <div id='rcm_bibtex' style="display:none; font-size:small;">
+                @inproceedings{wang2019reinforced, <br>
+                    title={Reinforced cross-modal matching and self-supervised imitation learning for vision-language navigation},<br>
+                    author={Wang, Xin and Huang, Qiuyuan and Celikyilmaz, Asli and Gao, Jianfeng and Shen, Dinghan and Wang, Yuan-Fang and Yang Wang, William and Zhang, Lei},<br>
+                    booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},<br>
+                    pages={6629--6638},<br>
+                    year={2019}<br>
+                  }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b>MAN: Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment</b> <br>
+                Da Zhang, Xiyang Dai, <b>Xin Wang</b>, Yuan-Fang Wang, Larry S. Davis <br>
+                <em>CVPR 2019</em><br>
+            [<a href="https://arxiv.org/abs/1812.00087">Paper</a>]
+            <!-- [<a>Code</a>] -->
+            [<a href="javascript:void(0)" onclick="toggle_visibility('man_bibtex');">bibtex</a>]
+            <div id='man_bibtex' style="display:none; font-size:small;">
+                @inproceedings{zhang2019man,<br>
+                    title={Man: Moment alignment network for natural language moment retrieval via iterative graph adjustment},<br>
+                    author={Zhang, Da and Dai, Xiyang and Wang, Xin and Wang, Yuan-Fang and Davis, Larry S},<br>
+                    booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},<br>
+                    pages={1247--1257},<br>
+                    year={2019}<br>
+                    }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b>Self-Supervised Dialogue Learning</b> <br>
+                Jiawei Wu, <b>Xin Wang</b>, William Yang Wang<br>
+                <em> ACL 2019</em> <br>
+            [<a href="https://arxiv.org/abs/1907.00448">Paper</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('ssn_bibtex');">bibtex</a>]
+            <div id='ssn_bibtex' style="display:none; font-size:small;">
+                  @article{wu2019self, <br>
+                    title={Self-Supervised Dialogue Learning}, <br>
+                    author={Wu, Jiawei and Wang, Xin and Wang, William Yang}, <br>
+                    journal={arXiv preprint arXiv:1907.00448}, <br>
+                    year={2019} <br>
+                  }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+            <p>
+                <b>Self-Supervised Learning for Contextualized Extractive Summarization</b> <br>
+                Hong Wang, <b>Xin Wang</b>, Wenhan Xiong, Mo Yu, Xiaoxiao Guo, Shiyu Chang, William Yang Wang<br>
+                <em> ACL 2019</em> <br>
+                <!-- <font color="red">Oral presentation</font> -->
+            [<a href="https://arxiv.org/abs/1906.04466">Paper</a>]
+            [<a href="https://github.com/hongwang600/Summarization">Code</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('sum_bibtex');">bibtex</a>]
+            <div id='sum_bibtex' style="display:none; font-size:small;">
+                  @article{wang2019self, <br>
+                    title={Self-Supervised Learning for Contextualized Extractive Summarization}, <br>
+                    author={Wang, Hong and Wang, Xin and Xiong, Wenhan and Yu, Mo and Guo, Xiaoxiao and Chang, Shiyu and Wang, William Yang}, <br>
+                    journal={arXiv preprint arXiv:1906.04466}, <br>
+                    year={2019} <br>
+                  }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+            <p>
+                <b>Towards Generating Long and Coherent Text with Multi-Level Latent Variable Models</b> <br>
+                Dinghan Shen, Asli Celikyilmaz, Yizhe Zhang, Liqun Chen, <b>Xin Wang</b>, Jianfeng Gao, Lawrence Carin <br>
+                <em>ACL 2019</em> <br>
+            [<a href="https://arxiv.org/abs/1902.00154">Paper</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('long_bibtex');">bibtex</a>]
+            <div id='long_bibtex' style="display:none; font-size:small;">
+                @article{zhang2018man,<br>
+                  title={MAN: Moment Alignment Network for Natural Language Moment Retrieval via Iterative Graph Adjustment},<br>
+                  author={Zhang, Da and Dai, Xiyang and Wang, Xin and Wang, Yuan-Fang and Davis, Larry S.},<br>
+                  journal={arXiv preprint arXiv:1812.00087},<br>
+                  year={2018}<br>
+                }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b> Extract and Edit: An Alternative to Back-Translation for Unsupervised Neural Machine Translation</b> <br>
+                Jiawei Wu, <b>Xin Wang</b>, William Yang Wang<br>
+                <em> NAACL 2019</em> <br>
+                <font color="red">Oral presentation</font><br>
+            [<a href="https://arxiv.org/abs/1904.02331">Paper</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('unmt_bibtex');">bibtex</a>]
+            <div id='unmt_bibtex' style="display:none; font-size:small;">
+                @article{wu2019extract,<br>
+                  title={Extract and Edit: An Alternative to Back-Translation for Unsupervised Neural Machine Translation},<br>
+                  author={Wu, Jiawei and Wang, Xin and Wang, William Yang},<br>
+                  journal={arXiv preprint arXiv:1904.02331},<br>
+                  year={2019}<br>
+                }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b> Learning to Compose Topic-Aware Mixture of Experts for Zero-Shot Video Captioning</b> <br>
+                <b>Xin Wang</b>, Jiawei Wu, Da Zhang, Yu Su, William Yang Wang<br>
+                <em> AAAI 2019</em> <br>
+                <font color="red">Oral presentation</font><br>
+            [<a href="https://arxiv.org/abs/1811.02765">Paper</a>]
+            [<a href="https://github.com/eric-xw/Zero-Shot-Video-Captioning">Code</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('aaai19_bibtex');">bibtex</a>]
+            <div id='aaai19_bibtex' style="display:none; font-size:small;">
+                @article{wang2019learning,<br>
+                  title={Learning to Compose Topic-Aware Mixture of Experts for Zero-Shot Video Captioning},<br>
+                  author={Wang, Xin and Wu, Jiawei and Zhang, Da and Su, Yu and Wang, William Yang},<br>
+                  journal={arXiv preprint arXiv:1811.02765},<br>
+                  year={2018}<br>
+                }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+</table>
+
+<h3>2018</h3>
+<table id="tbPublications" width="100%">
+    <tr>
+        <td width="100%">
+            <p>
+                <b> Look Before You Leap: Bridging Model-Free and Model-Based Reinforcement Learning for Planned-Ahead Vision-and-Language Navigation</b> <br>
+                <b>Xin Wang</b>*, Wenhan Xiong*, Hongmin Wang, William Yang Wang<br>
+                <em> ECCV 2018</em><br>
+            [<a href="https://arxiv.org/abs/1803.07729">Paper</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('eccv18_bibtex');">bibtex</a>]
+            <div id='eccv18_bibtex' style="display:none; font-size:small;">
+                @InProceedings{wang2018look,<br>
+                title={Look Before You Leap: Bridging Model-Free and Model-Based Reinforcement Learning for Planned-Ahead Vision-and-Language Navigation},<br>
+                author={Wang, Xin and Xiong, Wenhan and Wang, Hongmin and Wang, William Yang},<br>
+                booktitle = {The European Conference on Computer Vision (ECCV)}, <br>
+                month = {September}, <br>
+                year={2018}<br>
+                }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b>XL-NBT: A Cross-lingual Neural Belief Tracking Framework</b> <br>
+                Wenhu Chen, Jianshu Chen, Yu Su, <b>Xin Wang</b>, Dong Yu, Xifeng Yan, William Yang Wang <br>
+                <em> EMNLP 2018</em> <br>
+            [<a href="https://arxiv.org/abs/1808.06244">Paper</a>]
+            [<a href="https://github.com/wenhuchen/Cross-Lingual-NBT">Code</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('emnlp18_bibtex');">bibtex</a>]
+            <div id='emnlp18_bibtex' style="display:none; font-size:small;">
+                @article{chen2018XLNBT, <br>
+                title     = {XL-NBT: A Cross-lingual Neural Belief Tracking Framework}, <br>
+                author    = {Chen, Wenhu and Chen, Jianshu and Su, Yu and  Wang, Xin and Yu, Dong and Yan, Xifeng and Wang, William Yang}, <br>
+                booktitle = {arXiv preprint arXiv:1808.06244}, <br>
+                year      = {2018} <br>
+                } <br>
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="100%">
+            <p>
+                <b>No Metrics Are Perfect: Adversarial Reward Learning for Visual Storytelling</b> <br>
+                <b>Xin Wang</b>*, Wenhu Chen*, Yuan-Fang Wang, William Yang Wang<br>
+                <em> ACL 2018</em> <br>
+                <font color="red">Oral presentation</font><br>
+            [<a href="https://arxiv.org/abs/1804.09160">Paper</a>]
+            [<a href="https://github.com/littlekobe/AREL">Code</a>]
+            [<a href="https://vimeo.com/285801215">Video</a>]
+            [<a href="slides/AREL.pptx">Slides (pptx)</a>]
+            [<a href="slides/AREL.pdf">Slides (pdf)</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('acl18_bibtex');">bibtex</a>]
+            <div id='acl18_bibtex' style="display:none; font-size:small;">
+                @InProceedings{wang2018AREL, <br>
+                title     = {No Metrics Are Perfect: Adversarial Reward Learning for Visual Storytelling}, <br>
+                author    = {Wang, Xin  and  Chen, Wenhu  and  Wang, Yuan-Fang and Wang, William Yang}, <br>
+                booktitle = {Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, <br>
+                year      = {2018} <br>
+                } <br>
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+            <p>
+                <b>S3D: Single Shot multi-Span Detector via Fully 3D Convolutional Network</b> <br>
+                Da Zhang, Xiyang Dai, <b>Xin Wang</b>, Yuan-Fang Wang<br>
+                <em> BMVC 2018 </em> <br>
+                <font color="red">Oral presentation</font><br>
+            [<a href="https://arxiv.org/abs/1807.08069">Paper</a>]
+            [<a href="https://github.com/dazhang-cv/S3D">Code</a>]
+            [<a href="https://www.youtube.com/watch?v=wKIZh1XgndA&feature=youtu.be#t=0m55s">Video</a>]
+            [<a href="slides/S3D_BMVC2018.pdf">Slides</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('bmvc18_bibtex');">bibtex</a>]
+            <div id='bmvc18_bibtex' style="display:none; font-size:small;">
+                @inproceedings{zhang2018bmvc, <br>
+                author = {Zhang, Da and Dai, Xiyang and Wang, Xin and Wang, Yuan-Fang}, <br>
+                title = {S3D: Single Shot multi-Span Detector via Fully 3D Convolutional Network}, <br>
+                booktitle = {Proceedings of the British Machine Vision Conference}, <br>
+                year = {2018} <br>
+                } <br>
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+            <p>
+                <b>Video Captioning via Hierarchical Reinforcement Learning</b> <br>
+                <b>Xin Wang</b>, Wenhu Chen, Jiawei Wu, Yuan-Fang Wang, William Yang Wang <br>
+                <em>CVPR 2018</em><br>
+            [<a href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Wang_Video_Captioning_via_CVPR_2018_paper.pdf">Paper</a>]
+            [<a href="http://openaccess.thecvf.com/content_cvpr_2018/Supplemental/0007-supp.pdf">Supp</a>]
+            [<a href="data/CharadesCaptions.zip">Dataset</a>]
+            <!-- [<a href="https://cloud.tencent.com/developer/article/1092810">Media (Chinese)</a>] -->
+            [<a href="javascript:void(0)" onclick="toggle_visibility('cvpr18_bibtex');">bibtex</a>]
+            <div id='cvpr18_bibtex' style="display:none; font-size:small;">
+                @InProceedings{wang2018video, <br>
+                  title = {Video Captioning via Hierarchical Reinforcement Learning}, <br>
+                  author = {Wang, Xin and Chen, Wenhu and Wu, Jiawei and Wang, Yuan-Fang and Wang, William Yang}, <br>
+                  booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, <br>
+                  year = {2018} <br>
+                }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+            <p>
+                <b> Watch, Listen, and Describe: Globally and Locally Aligned Cross-Modal Attentions for Video Captioning </b> <br>
+                <b>Xin Wang</b>, Yuan-Fang Wang, William Yang Wang <br>
+                <em> NAACL-HLT 2018</em><br>
+            [<a href="https://arxiv.org/abs/1804.05448">Paper</a>]
+            [<a href="http://aclweb.org/anthology/N18-2125">Paper</a>]
+            [<a href="javascript:void(0)" onclick="toggle_visibility('naacl18_bibtex');">bibtex</a>]
+            <div id='naacl18_bibtex' style="display:none; font-size:small;">
+                @InProceedings{wang2018watch, <br>
+                author =  {Wang, Xin and Wang, Yuan-Fang and Wang, William Yang}, <br>
+                title =   {Watch, Listen, and Describe: Globally and Locally Aligned Cross-Modal Attentions for Video Captioning}, <br>
+                booktitle =   {Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 2 (Short Papers)}, <br>
+                year =    {2018} <br>
+                }
+            </div>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<h3>2017</h3>
+<table>
+    <tr>
+        <td width="100%">
+            <p>
+                <b>Multimodal Transfer: A Hierarchical Deep Convolutional Neural Network for Fast Artistic Style Transfer</b> <br>
+                <b>Xin Wang</b>, Geoffrey Oxholm, Da Zhang, Yuan-Fang Wang <br>
+                <em>CVPR 2017</em><br>
+            [<a href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Wang_Multimodal_Transfer_A_CVPR_2017_paper.pdf">Paper</a>]
+            [<a href="http://openaccess.thecvf.com/content_cvpr_2017/supplemental/Wang_Multimodal_Transfer_A_2017_CVPR_supplemental.pdf">Supp</a>]
+            [<a href="data/cvpr17_images.zip">Images</a>]
+            [<a href="https://github.com/fullfanta/multimodal_transfer">Code (Third-Party)</a>]
+            <!-- [<a href="https://www.youtube.com/watch?v=IbVwC-eDjiE">Media</a>] -->
+            [<a href="javascript:void(0)" onclick="toggle_visibility('cvpr17_bibtex');">bibtex</a>]
+            <div id='cvpr17_bibtex' style="display:none; font-size:small;">
+                @InProceedings{Wang_2017_CVPR,<br>
+                author = {Wang, Xin and Oxholm, Geoffrey and Zhang, Da and Wang, Yuan-Fang},<br>
+                title = {Multimodal Transfer: A Hierarchical Deep Convolutional Neural Network for Fast Artistic Style Transfer},<br>
+                booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},<br>
+                month = {July},<br>
+                year = {2017}<br>
+                }
+            </div>
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+        <p>
+            <b>Deep Reinforcement Learning for Visual Object Tracking in Videos</b> <br>
+            Da Zhang, Hamid  Maei, <b>Xin Wang</b>, Yuan-Fang Wang <br>
+            <em>Tech report 2017</em><br>
+        [<a href="https://arxiv.org/abs/1701.08936">Paper</a>]
+        <!-- [<a href="papers/tracking_17.pdf">Paper</a>] -->
+        [<a href="javascript:void(0)" onclick="toggle_visibility('tracking_bibtex');">bibtex</a>]
+        <div id='tracking_bibtex' style="display:none; font-size:small;">
+            @article{zhang2017deep,<br>
+              title={Deep Reinforcement Learning for Visual Object Tracking in Videos},<br>
+              author={Zhang, Da and Maei, Hamid and Wang, Xin and Wang, Yuan-Fang},<br>
+              journal={arXiv preprint arXiv:1701.08936},<br>
+              year={2017}<br>
+            }
+        </div>
+        </p>
+        </td>
+    </tr>
+</table>
+
+</div>
+
+
+<br><br>
+
+<div id="products">
+<h2>Products</h2>
+<table>
+    <tr>
+        <td width="306">
+        <img src="indexpics/cloak.jpg" width="285px" height="140px" style="box-shadow: 4px 4px 8px #888">
+        </td>
+        <td>
+            <p>
+                <b>ProjectCloak</b>: Remove Unwanted Objects in Video <br>
+                In collabration with Geoffrey Oxholm, Oliver Wang, Eli Shechtman, Mike Lukac <br>
+                <em>2017 MAX Sneak</em> <br>
+                <em>2018 MAX Keynote</em> <br>
+                <font color="red"><em>Featured in Adobe After Effects! <a href="https://www.theverge.com/2019/4/3/18293526/adobe-after-effects-content-aware-fill-remove-unwanted-objects-videos">Link</a></em></font>
+            <p></p>
+            <p> 
+            [<a href="https://research.adobe.com/cloak-remove-unwanted-objects-in-video/">Project</a>]
+            [<a href="https://theblog.adobe.com/peek-behind-sneaks-filmmakers-gain-power-invisibility/">Blog</a>]
+            [<a href="https://www.youtube.com/watch?v=TzBZWBht02I">Video</a>]
+            </p>
+        </td>
+    </tr>
+
+    <tr>
+        <td width="306">
+        <img src="indexpics/artisticeye.png" width="285px" height="140px" style="box-shadow: 4px 4px 8px #888">
+        </td>
+        <td>
+            <p>
+                <b>ArtisticEye</b>: A Real-time Application for High-resolution Artistic Style Transfer <br>
+                In collabration with Geoffrey Oxholm <br>
+                <em>Applied to the de Young Museum in San Francisco</em> <br>
+                <font color="red"><em>Honored to present the product prototype to the Adobe CEO Shantanu Narayen face to face</em></font>
+            <p></p>
+            <p> 
+            [<a href="https://blogs.adobe.com/conversations/2017/03/de-youngsters-photos-get-the-look-of-masterpieces.html">Blog</a>]
+            [<a href="https://www.youtube.com/watch?v=IbVwC-eDjiE">Video</a>]
+            </p>
+        </td>
+    </tr>
+
+</table>
+
+</div>
+
+<br><br>
+
+<div id="experience">
+<h2>Experience</h2>
+
+<table id="tbPublications" width="100%">
+    <tr>
+        <td>
+            <p><a href="https://ai.google/research/teams/language/">Google AI</a>, Mountain View, US</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Research Intern, &nbsp Summer 2019</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mentors: 
+                <a href="http://www.sravi.org/">Sujith Ravi</a>, 
+                <a href="http://www.kozareva.com/">Zornitsa Kozareva</a>
+            </p>
+        </td>
+        <td align="center">
+            <p><img src="logos/google.jpeg" height=60px></p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p><a href="https://research.fb.com/category/facebook-ai-research/">Facebook AI Research (FAIR)</a>, Menlo Park, US</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Graduate Researcher, &nbsp Spring 2019</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mentors: 
+                <a href="http://xinleic.xyz/">Xinlei Chen</a>,
+                <a href="http://rohrbach.vision/">Marcus Rohrbach</a>,
+                <a href="https://www.cc.gatech.edu/~dbatra/">Dhruv Batra</a>
+                <!-- <a href="http://www.skamalas.com/">Yannis Kalantidis</a> -->
+            </p> 
+        </td>
+        <td align="center">
+            <p><img src="logos/FAIR.png" height=70px></p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p><a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/">Microsoft Research AI</a>, Redmond, US</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Research Intern, &nbsp Summer 2018</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mentors: 
+                <a href="https://www.microsoft.com/en-us/research/people/leizhang/">Lei Zhang</a>, 
+                <a href="https://www.microsoft.com/en-us/research/people/aslicel/">Asli Celikyilmaz</a>, 
+                <a href="https://www.microsoft.com/en-us/research/people/jfgao/"> Jianfeng Gao</a>            
+                <!-- <a href="http://www.qyhuang.site/">Qiuyuan Huang</a> -->
+            </p> 
+        </td>
+        <td align="center">
+            <p><img src="logos/msr.jpg" height=60px></p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p><a href="https://research.adobe.com/">Adobe Research</a>, San Francisco, US</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Research Intern, &nbsp Summer 2017</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mentors: 
+                <a href="https://www.linkedin.com/in/geoffoxholm/">Geoffrey Oxholm</a>, 
+                <a href="http://www.oliverwang.info/"> Oliver Wang</a>, 
+                <a href="https://research.adobe.com/person/eli-shechtman/">Eli Shechtman</a>, 
+                <a href="https://research.adobe.com/person/michal-lukac/">Mike Lukac</a>
+            </p> 
+        </td>
+        <td align="center">
+            <p><img src="logos/adobe_2.jpg" height=80px></p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p><a href="https://research.adobe.com/">Adobe Research</a>, San Francisco, US</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Research Intern, &nbsp Summer 2016</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Mentor: 
+                <a href="https://www.linkedin.com/in/geoffoxholm/">Geoffrey Oxholm</a>
+            </p> 
+        </td>
+        <td align="center">
+            <p><img src="logos/adobe_2.jpg" height=80px></p> 
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p><a href="http://www.exacloud.cn/">Exacloud Inc.</a>, Hangzhou, China</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Software Engineer Intern, &nbsp 12. 2014 - 03. 2015</p>
+        </td>
+        <td align="center">
+            <p><img src="logos/exacloud.png" height=80px></p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p><a href="http://www.cs.hku.hk/research/group.jsp">HCI, Graphics and Computer Vision Group, HKU</a></p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Research Assistant, Summer 2014</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Advisor: 
+                <a href="https://i.cs.hku.hk/~yzyu/">Yizhou Yu</a>
+            </p> 
+        </td>
+        <td align="center">
+            <p><img src="logos/hku.jpg" height=80px></p>
+        </td>
+    </tr>
+</table>
+</div>
+
+<br><br>
+
+<div id='teaching'>
+<h2>Teaching</h2>
+<table id="tbTeaching" border="0" width="100%">
+    <tbody>
+        <tr>
+            <td> 2018</td>
+            <td>Winter</td>
+            <td>Guest Lecturer</td>
+            <td><a href="http://www.cs.ucsb.edu/~cs281b/">CS281b: Computer Vision and Image Analysis</a></td>
+        </tr>
+        <tr>
+            <td> 2017</td>
+            <td>Winter</td>
+            <td>Teaching Assistant</td>
+            <td><a href="http://william.cs.ucsb.edu/courses/index.php/Winter_2017_CS190I_Introduction_to_Natural_Language_Processing">CS190I: Introduction to Natual Language Processing</a></td>
+        </tr>
+        <tr>
+            <td> 2016</td>
+            <td>Fall</td>
+            <td>Teaching Assistant</td>
+            <td>CS180: Computer Graphics</td>
+        </tr>
+        <tr>
+            <td> 2016</td>
+            <td>Winter</td>
+            <td>Teaching Assistant</td>
+            <td>CS48: Computer Science Project</td>
+        </tr>
+        <tr>
+            <td> 2015</td>
+            <td>Fall</td>
+            <td>Teaching Assistant</td>
+            <td>CS16: Problem Solving with C++</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<!-- <br><br> -->
+
+<!-- <div id="awards">
+<h2>Awards</h2>
+<table style="border-spacing:2px">
+	</tbody>
+		<tr><td>Outstanding Graduates, Zhejiang University, 2015</td></tr>
+		<tr><td>Excellent Bachelor Thesis, Zhejiang University, 2015</td></tr>
+		<tr><td>CCF Outstanding Student Award (only 100 in China per year), China Computer Federation (CCF), 2014</td></tr>
+		<tr><td>National Endeavor Scholarship, Ministry of Education, China, 2012 - 2014</td></tr>
+		<tr><td>First Prize Outstanding Student Scholarship, Zhejiang University, 2013 - 2015</td></tr>
+		<tr><td>Merit Student Award, Zhejiang University, 2013 - 2014</td></tr>
+		<tr><td>Student Leadership Award, Zhejiang University, 2013</td></tr>
+		<tr><td>Activity Achievement Scholarship, Zhejiang University, 2012</td></tr>
+	</tbody>
+</table>
+</div>
+ -->
+
+<br><br>
+<div id="service">
+<h2>Service</h2>
+<li>
+    <b>Organizer: </b> 
+    <ul>
+        <li><a href="https://alvr-workshop.github.io">Workshop on Advances in Language and Vision Research (ALVR)</a>, ACL 2020</li>
+        <li><a href="https://languageandvision.github.io/">Workshop on Language & Vision with applications to Video Understanding</a>, CVPR 2020</li> 
+        <li>Tutorial on Self-Supervised Deep Learning for NLP, AACL-IJCNLP 2020</li> 
+        <li><a href="https://vatex.org">First VATEX Challenge for Multilingual Video Captioning</a></li>
+        <li><a href="https://sites.google.com/site/iccv19clvllsmdc/home">Workshop on Closing the Loop Between Vision and Language (CLVL)</a>, ICCV 2019 </li>
+    </ul>
+</li>
+<li>
+    <b>Area Chair: </b> 
+    <ul>
+        <li><a href="https://2020.emnlp.org/">EMNLP 2020</a>&nbsp (Interpretability and Analysis of Models for NLP)</li>
+    </ul>    
+</li>
+<li>
+    <b>Session Chair: </b> 
+    <ul>
+    	<li><a href="https://aaai.org/Conferences/AAAI-19/">AAAI 2019</a> (Natural Language Processing) </li>
+    </ul>
+</li>
+<li>
+    <b>Conference Program Committee or Reviewer: </b> 
+	<a href="http://cvpr2019.thecvf.com/">NeurIPS 2020</a>, &nbsp
+	<a href="http://cvpr2019.thecvf.com/">ACL 2020</a>, &nbsp
+	<a href="http://cvpr2019.thecvf.com/">ECCV 2020</a>, &nbsp
+	<a href="http://cvpr2019.thecvf.com/">CVPR 2020</a>, &nbsp
+	<a href="https://aaai.org/Conferences/AAAI-20/">AAAI 2020</a>, &nbsp
+	<a href="https://www.robot-learning.org/">CoRL 2019</a>, &nbsp
+	<a href="https://nips.cc/Conferences/2019">NeurIPS 2019</a>, &nbsp
+	<a href="https://www.emnlp-ijcnlp2019.org/">EMNLP-IJCNLP 2019</a>, &nbsp
+	<a href="http://iccv2019.thecvf.com/">ICCV 2019</a>, &nbsp
+	<a href="http://cvpr2019.thecvf.com/">CVPR 2019</a>, &nbsp
+	<a href="http://www.acl2019.org/EN/index.xhtml">ACL 2019</a>, &nbsp
+	<a href="http://naacl2019.org/">NAACL 2019</a>,	&nbsp
+	<a href="https://cs.stanford.edu/people/ranjaykrishna/sgrl/index.html">SGRL 2019</a>, &nbsp
+	<a href="https://www.conll.org/2019">CoNLL 2019</a>, &nbsp
+	<a href="https://splu-robonlp.github.io/#overview">SpLU-RoboNLP 2019</a>, &nbsp
+	<a href="https://aaai.org/Conferences/AAAI-19/">AAAI 2019</a>, &nbsp
+	<a href="http://emnlp2018.org/">EMNLP 2018</a>, &nbsp
+	<a href="https://socalnlp.github.io/symp18/index.html">SoCal NLP 2018</a>    
+    <p style="margin-top:3px">
+    </p>        
+</li>
+<li>
+	<b>Journal Reviewer:</b>  
+	<a href="http://www.computer.org/web/tpami">TPAMI</a>, 	
+	&nbsp<a href="http://link.springer.com/journal/11263">IJCV</a>
+<!-- 	&nbsp<a href="https://www.computer.org/web/tvcg">TVCG</a>,
+	&nbsp<a href="http://www.signalprocessingsociety.org/publications/periodicals/image-processing/">TIP</a>,
+	&nbsp<a href="http://tcsvt.polito.it/">TCSVT</a>,
+	&nbsp<a href="http://link.springer.com/journal/371">TVC</a>,
+	&nbsp<a href="">CAD</a>,
+	&nbsp<a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046">TMM</a> -->
+	<p style="margin-top:3px">
+	</p>		
+</li>
+<!-- <li>
+	<b>Presentations:</b> 	<a href="http://www.iccv2013.org/">ICCV 2013</a>,
+	&nbsp<a href="http://eccv2014.org/">ECCV 2014</a>,
+	&nbsp <a href="http://pamitc.org/iccv15/">ICCV 2015</a>,
+	&nbsp <a href="">Eurographics 2016</a>
+	<p style="margin-top:3px">
+	</p>		
+</li> -->
+<!-- </div> -->
+
+<div id="footer">
+	<!-- <div id="footer-text"></div> -->
+<p>
+<center>
+    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=cbe090&w=300&d=aJJ1wUAUT3iAzbbM3So9Rj0rh8-XOWIxZRgWKqOvcDk&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
+
+    <br>
+    &copy; Xin (Eric) Wang
+</center>
+</p>
+
+</div>
+
+
+
+</div>
+</body>
 </html>
