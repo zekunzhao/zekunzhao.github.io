@@ -1,367 +1,292 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
+<!doctype html>
+<html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/png" href="image.png">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <meta name="keywords" content="Zekun Zhao, CS, UCSC, UC Santa Cruz, UCB, University of California, Berkeley, Nankai University, Computer Vision, NLP, Machine Learning, Deep Learning">
-    <meta name="description" content="Zekun Zhao's Homepage">
-    <link rel="stylesheet" href="/jemdoc.css" type="text/css" />
-    <title>Zekun Zhao</title>
-    <script type="text/javascript">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zekun Zhao</title>
+<meta name="description" content="Zekun Zhao, Ph.D. student at UC Santa Cruz working on efficient LLM inference and verifying the reasoning of language models.">
+<meta name="keywords" content="Zekun Zhao, UCSC, UC Santa Cruz, NLP, LLM inference, SGLang, Parallel Prompting, Lean 4, formal verification">
+<link rel="icon" type="image/png" href="image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #111827;
+    --body: #374151;
+    --muted: #6b7280;
+    --rule: #e5e7eb;
+    --soft: #f6f7f9;
+    --accent: #1d4ed8;
+    --accent-soft: #eff4ff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111316; --ink: #f3f4f6; --body: #d1d5db; --muted: #9ca3af; --rule: #2a2e35;
+      --soft: #181b20; --accent: #8db4ff; --accent-soft: #17213a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111316; --ink: #f3f4f6; --body: #d1d5db; --muted: #9ca3af; --rule: #2a2e35;
+    --soft: #181b20; --accent: #8db4ff; --accent-soft: #17213a;
+  }
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-39824124-1']);
-      _gaq.push(['_trackPageview']);
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 4.5rem; }
+  body {
+    margin: 0; background: var(--bg); color: var(--body);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 1rem; line-height: 1.65;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  b, strong { color: var(--ink); font-weight: 600; }
+  .wrap { max-width: 52rem; margin: 0 auto; padding: 0 1.25rem; }
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(1.4) blur(8px); -webkit-backdrop-filter: saturate(1.4) blur(8px); border-bottom: 1px solid var(--rule);
+  }
+  nav .wrap { display: flex; align-items: center; gap: 1.5rem; height: 3.5rem; }
+  nav .name { color: var(--ink); font-weight: 600; margin-right: auto; }
+  nav .links { display: flex; gap: 1.25rem; font-size: 0.92rem; }
+  nav .links a { color: var(--muted); }
+  nav .links a:hover { color: var(--ink); text-decoration: none; }
+  @media (max-width: 640px) { nav .links a.opt { display: none; } nav .links { gap: 1rem; } }
 
-    </script>
-    <script type="text/javascript">
-       function toggle_visibility(id) {
-           var e = document.getElementById(id);
-           if(e.style.display == 'block')
-              e.style.display = 'none';
-           else
-              e.style.display = 'block';
-       }
-    </script>
+  /* hero */
+  .hero { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; padding: 3.5rem 0 2.5rem; }
+  h1 { font-family: "Source Serif 4", Georgia, serif; color: var(--ink); font-size: 2.4rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 0.35rem; }
+  .role { color: var(--ink); font-size: 1.08rem; margin: 0; }
+  .affil { color: var(--muted); margin: 0.1rem 0 1.1rem; }
+  .hero p.intro { margin: 0 0 1.25rem; }
+  .photo { width: 168px; height: 168px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--rule); }
+  .btns { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.38rem 0.85rem; border-radius: 999px;
+    border: 1px solid var(--rule); color: var(--ink); font-size: 0.88rem; font-weight: 500; background: var(--bg);
+  }
+  .btn:hover { text-decoration: none; border-color: var(--muted); }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn svg { width: 1em; height: 1em; fill: currentColor; }
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; gap: 1.25rem; padding-top: 2rem; }
+    .photo { order: -1; width: 120px; height: 120px; }
+    h1 { font-size: 2rem; }
+  }
+
+  /* sections */
+  section { padding: 2.25rem 0 0.5rem; border-top: 1px solid var(--rule); }
+  h2 { font-family: "Source Serif 4", Georgia, serif; color: var(--ink); font-size: 1.45rem; font-weight: 600; margin: 0 0 1.1rem; }
+  .interests { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.25rem 0 1.5rem; padding: 0; list-style: none; }
+  .interests li { background: var(--soft); border: 1px solid var(--rule); border-radius: 999px; padding: 0.15rem 0.75rem; font-size: 0.86rem; color: var(--ink); }
+
+  /* featured work */
+  .feature { display: grid; grid-template-columns: 17rem 1fr; gap: 1.5rem; padding: 1.25rem; border: 1px solid var(--rule); border-radius: 0.9rem; margin-bottom: 1rem; }
+  .feature.noimg { grid-template-columns: 1fr; }
+  .feature .thumb { display: block; background: #fff; border: 1px solid var(--rule); border-radius: 0.6rem; padding: 0.5rem; align-self: start; }
+  .feature .thumb img { display: block; width: 100%; height: auto; }
+  .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 0.3rem; padding: 0.05rem 0.45rem; margin-bottom: 0.45rem; }
+  .feature h3 { color: var(--ink); font-size: 1.08rem; font-weight: 600; line-height: 1.4; margin: 0 0 0.3rem; }
+  .feature .meta { color: var(--muted); font-size: 0.88rem; margin: 0 0 0.6rem; }
+  .feature p { margin: 0 0 0.75rem; font-size: 0.95rem; }
+  .stats { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0 0 0.85rem; padding: 0; list-style: none; }
+  .stats li { font-size: 0.86rem; color: var(--muted); }
+  .stats b { display: block; font-size: 1.2rem; line-height: 1.3; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .links-row { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip { font-size: 0.82rem; font-weight: 500; padding: 0.15rem 0.6rem; border: 1px solid var(--rule); border-radius: 0.4rem; color: var(--ink); }
+  .chip:hover { text-decoration: none; border-color: var(--muted); }
+  .chip.soon { color: var(--muted); border-style: dashed; }
+  @media (max-width: 640px) { .feature { grid-template-columns: 1fr; padding: 1rem; gap: 1rem; } }
+
+  /* news */
+  .news { list-style: none; margin: 0; padding: 0; }
+  .news li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.75rem; padding: 0.35rem 0; }
+  .news .d { color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.92rem; }
+
+  /* publications */
+  .pubs { list-style: none; margin: 0; padding: 0; }
+  .pubs li { padding: 0.85rem 0; border-bottom: 1px solid var(--rule); }
+  .pubs li:last-child { border-bottom: 0; }
+  .pubs .t { color: var(--ink); font-weight: 600; line-height: 1.45; }
+  .pubs .a { font-size: 0.92rem; margin-top: 0.15rem; }
+  .pubs .a b { font-weight: 600; }
+  .pubs .v { color: var(--muted); font-size: 0.92rem; font-style: italic; }
+  .pubs .links-row { margin-top: 0.4rem; }
+
+  /* compact lists */
+  .rows { list-style: none; margin: 0; padding: 0; }
+  .rows li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.75rem; padding: 0.35rem 0; font-size: 0.95rem; }
+  .rows .d { color: var(--muted); font-size: 0.9rem; }
+  @media (max-width: 640px) { .rows li, .news li { grid-template-columns: 1fr; gap: 0; } }
+  details { margin: 0.25rem 0 0; }
+  details summary { cursor: pointer; color: var(--ink); font-weight: 500; padding: 0.3rem 0; }
+  details ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+  details li { margin: 0.35rem 0; font-size: 0.95rem; }
+
+  footer { color: var(--muted); font-size: 0.85rem; padding: 2.5rem 0 3rem; border-top: 1px solid var(--rule); margin-top: 2rem; }
+</style>
 </head>
-
 <body>
 
-<nav class="navbar navbar-dark navbar-expand-lg fixed-top">
-    <div id="layout-menu">
-        <a href="#">Home</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#reports">Reports</a>
-        <a href="#products">Products</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#service">Service</a>
-        <a href="/reports/CV_Zekun_Zhao_2026.pdf">CV</a>
+<nav>
+  <div class="wrap">
+    <a class="name" href="#">Zekun Zhao</a>
+    <div class="links">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a class="opt" href="#news">News</a>
+      <a class="opt" href="#teaching">Teaching</a>
+      <a href="reports/CV_Zekun_Zhao_2026.pdf">CV</a>
     </div>
+  </div>
 </nav>
 
+<main class="wrap">
 
-<div id="layout-content" style="margin-top:25px">
+<header class="hero">
+  <div>
+    <h1>Zekun Zhao</h1>
+    <p class="role">Ph.D. student, Computer Science and Engineering</p>
+    <p class="affil">University of California, Santa Cruz</p>
+    <p class="intro">I work with <a href="https://jflanigan.github.io/">Jeffrey Flanigan</a> on making large language model inference faster and on verifying the reasoning of language models. Recently I built <a href="https://jlab-nlp.github.io/parallel-prompting/">Parallel Prompting</a>, which answers many questions about one long document 3.7&ndash;6.0&times; faster than stock SGLang.</p>
+    <div class="btns">
+      <a class="btn primary" href="reports/CV_Zekun_Zhao_2026.pdf">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5L14 3.5zM7 12h10v1.6H7zm0 3.5h10v1.6H7zm0-7h5v1.6H7z"/></svg>CV</a>
+      <a class="btn" href="mailto:zzhao99@ucsc.edu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.3 7H4v.6l8 5.4 8-5.4V7h-.3L12 12.2z"/></svg>zzhao99@ucsc.edu</a>
+      <a class="btn" href="https://github.com/zekunzhao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/zekunzhao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.76-2.06 4.02 0 4.76 2.65 4.76 6.09V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg>LinkedIn</a>
+      <a class="btn" href="https://x.com/zhao_zekun">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.75 3h3.07l-6.7 7.66L22 21h-6.17l-4.83-6.32L5.47 21H2.4l7.17-8.2L2 3h6.33l4.37 5.78zm-1.08 16.2h1.7L7.4 4.7H5.58z"/></svg>X</a>
+    </div>
+  </div>
+  <img class="photo" src="1675132504824.jpeg" alt="Zekun Zhao">
+</header>
 
-<table>
-	<tbody>
-		<tr>
-			<td width="670">
-				<div id="toptitle">
-					<h1>Zekun Zhao</h1>
-				</div>
+<section id="research">
+  <h2>Research</h2>
+  <p>My research is on model inference, with an emphasis on efficiency and effectiveness: serving engines and attention kernels that make LLMs faster on real workloads, and methods that check whether a model's reasoning actually holds.</p>
+  <ul class="interests">
+    <li>Efficient LLM inference</li>
+    <li>SGLang &amp; vLLM serving</li>
+    <li>Attention kernels &amp; KV cache</li>
+    <li>Autoformalization in Lean 4</li>
+    <li>RL with verifier rewards</li>
+  </ul>
 
-				<h3>Ph.D. Student</h3>
-				<p>
-					Department of Computer Science and Engineering </br>
-					Jack Baskin School of Engineering</br>
-                    University of California, Santa Cruz </br>
-					</br>
-					Email: zzhao99 [at] ucsc [dot] edu
-				</p>
-				<p>
-                    <a href="https://www.linkedin.com/in/zekunzhao"><img src="pic/LinkedIn.png" height="30px" style="margin-bottom:-3px"></a>
-                    <a href="https://github.com/zekunzhao"><img src="pic/git.svg" height="30px" style="margin-bottom:-3px"></a>
-                    <iframe id="twitter-widget-4" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="https://platform.twitter.com/widgets/follow_button.59df888963e9d6219f6e6c7ff5d8b951.en.html#dnt=false&amp;id=twitter-widget-4&amp;lang=en&amp;screen_name=zhao_zekun&amp;show_count=false&amp;show_screen_name=true&amp;size=m&amp;time=1524631465785" style="position: static; visibility: visible; width: 155px; height: 20px;" data-screen-name="TwitterDev"></iframe>
-				</p>
-			</td>
- 			<td>
-				<img class="img-circle" src="1675132504824.jpeg" border="0" width="200px"></br>
-			</td>
-		<tr>
-	</tbody>
-</table>
+  <article class="feature">
+    <a class="thumb" href="https://jlab-nlp.github.io/parallel-prompting/"><img src="pic/parallel_prompting.png" alt="Batched requests, batch prompting and Parallel Prompting at one decode step"></a>
+    <div>
+      <span class="tag">New &middot; 2026</span>
+      <h3>Read Once, Answer Many: Parallel Prompting for Shared-Context LLM Inference</h3>
+      <p class="meta"><b>Zekun Zhao</b>, Jeffrey Flanigan &middot; Preprint, 2026</p>
+      <p>Decodes many questions about one long document as parallel streams of a single request, so each decode step reads the document's KV cache once instead of once per question. Built into SGLang with an in-kernel stream mask, CUDA-graph decoding and continuous batching.</p>
+      <ul class="stats">
+        <li><b>3.7&times;</b>faster than SGLang, A100</li>
+        <li><b>5.9&ndash;6.0&times;</b>faster, RTX A6000</li>
+        <li><b>144 / 144</b>paired runs faster</li>
+      </ul>
+      <div class="links-row">
+        <a class="chip" href="https://jlab-nlp.github.io/parallel-prompting/">Project page</a>
+        <a class="chip" href="https://github.com/jlab-nlp/parallel-prompting">Code</a>
+        <span class="chip soon">arXiv soon</span>
+      </div>
+    </div>
+  </article>
 
-<br>
+  <article class="feature noimg">
+    <div>
+      <span class="tag">NeurIPS 2026 Workshop</span>
+      <h3>Autoformalizing Chain of Thought: Representation, Verification, and Logical Shortcuts</h3>
+      <p class="meta"><b>Zekun Zhao</b>, Zilong Li, Jon Cai, Federico Ortega-Riba, Martha Palmer, James Martin, Jeffrey Flanigan</p>
+      <p>Translates natural-language chain-of-thought into Lean 4 so that each reasoning step can be checked. A GRPO pipeline trains Qwen2.5-Coder with a reward that combines Lean 4 compiler checks with an LLM judge of faithfulness, with guards against reward hacking. An SFT warm-up raised the share of test statements that compile from 6% to 39% for a 0.5B model, and cached, parallel judge calls made each training step 3&times; faster.</p>
+    </div>
+  </article>
+</section>
 
-<div id="bio">
-<h2>Bio</h2>
-Zekun Zhao is a Ph.D. student working with Professor <a href="https://jflanigan.github.io/ ">Jeffrey Flanigan</a> in the Computer Science and Engineering department at <a href="https://www.soe.ucsc.edu/">UC Santa Cruz</a>. His research focuses
-	on efficient large language model inference and on verifying the reasoning of language models.
-He obtained his B.Eng. at <a href="http://en.nankai.edu.cn/">Nankai University </a> in Intelligent Science and Technology.
-He worked at  <a href="https://mmcheng.net/">Ming-Ming Cheng</a>'s Lab  and   <a href="https://aien.nankai.edu.cn/2021/1108/c28091a412673/page.htm ">Feng Duan</a>'s Lab.
-<!-- <br><br> -->
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="d">Nov 2026</span><span>Released <a href="https://jlab-nlp.github.io/parallel-prompting/">Parallel Prompting</a>: paper, code and project page.</span></li>
+    <li><span class="d">Jul 2025</span><span>Attended ACL 2025 in Vienna.</span></li>
+    <li><span class="d">Jun 2024</span><span>Attended the UMR Parsing Workshop 2024 at CU Boulder.</span></li>
+    <li><span class="d">Jul 2022</span><span>Attended NAACL 2022 in Seattle.</span></li>
+    <li><span class="d">Jul 2020</span><span>Session volunteer at ACL 2020.</span></li>
+  </ul>
+</section>
 
-<h3>Research Interests</h3>
-Zekun's research focuses on model inference, with an emphasis on efficiency and effectiveness.
-<ul>
+<section id="publications">
+  <h2>Publications</h2>
+  <ul class="pubs">
     <li>
-        Efficient LLM inference (shared-context decoding, serving engines such as SGLang and vLLM, attention kernels)
+      <div class="t">Read Once, Answer Many: Parallel Prompting for Shared-Context LLM Inference</div>
+      <div class="a"><b>Zekun Zhao</b>, Jeffrey Flanigan</div>
+      <div class="v">Preprint, 2026. An earlier version appeared at the BayLearn Symposium 2025.</div>
+      <div class="links-row"><a class="chip" href="https://jlab-nlp.github.io/parallel-prompting/">Project page</a><a class="chip" href="https://github.com/jlab-nlp/parallel-prompting">Code</a></div>
     </li>
     <li>
-        Verification in AI (autoformalizing chain-of-thought into Lean 4, reinforcement learning with verifier rewards)
+      <div class="t">Autoformalizing Chain of Thought: Representation, Verification, and Logical Shortcuts</div>
+      <div class="a"><b>Zekun Zhao</b>, Zilong Li, Jon Cai, Federico Ortega-Riba, Martha Palmer, James Martin, Jeffrey Flanigan</div>
+      <div class="v">NeurIPS 2026 Workshop on Linguistic Principles for Foundation Models</div>
     </li>
     <li>
-        Natural Language Processing (natural language grounding, knowledge-based reasoning)
+      <div class="t">Building Bridges between Student and Curricular Language: Creating a Corpus of Abstract Meaning Representations for the Classroom</div>
+      <div class="a">Kristin Wright-Bettner, Jon Cai, <b>Zekun Zhao</b>, James H. Martin, Jeffrey Flanigan, Martha Palmer, Stelios Piperidis, N&uacute;ria Bel, Henk van den Heuvel, Nancy Ide</div>
+      <div class="v">LREC 2026, pages 11960&ndash;11971</div>
     </li>
     <li>
-        Machine Learning (deep learning, self-supervised learning, reinforcement learning, multimodal machine learning)
+      <div class="t">LiDARR: Linking Document AMRs with Referents Resolvers</div>
+      <div class="a">Jon Cai, Kristin Wright-Bettner, <b>Zekun Zhao</b>, Shafiuddin Rehan Ahmed, Abijith Trichur Ramachandran, Jeffrey Flanigan, Martha Palmer, James H. Martin</div>
+      <div class="v">ACL 2025 System Demonstrations, pages 426&ndash;435</div>
+      <div class="links-row"><a class="chip" href="https://aclanthology.org/2025.acl-demo.41.pdf">Paper</a></div>
     </li>
-</ul>
+  </ul>
+</section>
 
-<h3>School</h3>
-<font color="darkred">Check out the most beautiful and unique campus of UCSC [<a href="https://www.youtube.com/watch?v=ogGSFZUjrwE">YouTube video</a> | <a href="https://www.bilibili.com/video/BV1xz411e77n?from=search&seid=1387866364580672367">bilibili video</a>]. </font>
+<section id="background">
+  <h2>Education</h2>
+  <ul class="rows">
+    <li><span class="d">Expected 2027</span><span><b>Ph.D., Computer Science and Engineering</b>, UC Santa Cruz &middot; advisor <a href="https://jflanigan.github.io/">Jeffrey Flanigan</a></span></li>
+    <li><span class="d">B.Eng.</span><span><b>Intelligent Science and Technology</b>, <a href="http://en.nankai.edu.cn/">Nankai University</a> &middot; worked in <a href="https://mmcheng.net/">Ming-Ming Cheng</a>'s and <a href="https://aien.nankai.edu.cn/2021/1108/c28091a412673/page.htm">Feng Duan</a>'s labs</span></li>
+  </ul>
+</section>
 
-</div>
+<section id="teaching">
+  <h2>Teaching &amp; Service</h2>
+  <ul class="rows">
+    <li><span class="d">Fall 2020</span><span>TA, <a href="https://classes.soe.ucsc.edu/nlp201/Fall20/">NLP 201: Natural Language Processing</a></span></li>
+    <li><span class="d">Spring 2020</span><span>TA, <a href="https://cse102-spring20-01.courses.soe.ucsc.edu/">CSE 102: Introduction to Analysis of Algorithms</a></span></li>
+    <li><span class="d">Winter 2020</span><span>TA, <a href="https://classes.soe.ucsc.edu/cse102/Winter20-02/">CSE 102: Introduction to Analysis of Algorithms</a></span></li>
+    <li><span class="d">Fall 2019</span><span>TA, <a href="https://classes.soe.ucsc.edu/cse015/Fall19/">CSE 15: Introduction to Data Structures</a></span></li>
+    <li><span class="d">Service</span><span>Session volunteer, ACL 2020 &middot; Conference volunteer, <a href="https://mmcheng.net/cvm17/">CVM 2017</a></span></li>
+  </ul>
+</section>
 
-<br>
-<div id="news">
-<h2>News</h2>
-<div style="overflow-y: scroll; height:120px;">
-<table>
-		<tr valign="top"> <td>[11/2026] </td> <td> Released <a href="https://jlab-nlp.github.io/parallel-prompting/">Parallel Prompting</a>: paper, code and project page. </td></tr>
-		<tr valign="top"> <td>[07/2025] </td> <td> Join in ACL 2025, Vienna. </td></tr>
-		<tr valign="top"> <td>[06/2024] </td> <td> Join UMR Parsing Workshop 2024 at CU Boulder. </td></tr>
-		<tr valign="top"> <td>[07/2022] </td> <td> Join NAACL 2022 in Seattle. </td></tr>
-        <tr valign="top"> <td>[07/2020] </td> <td> Session Volunteer in ACL 2020. </td></tr>
-        <tr valign="top"> <td>[06/2016] </td> <td> Joined the <a href="http://openbotics.org/kamerider/index.php?title=Main_Page"> KameRider Team for RoboCup@Home</a> at 2016. </td></tr>
-</table>
-</div>
-</div>
-
-<br><br>
-
-<div id="publications">
-<h2>Publications</h2>
-<ul>
-    <li>
-        <b>Read Once, Answer Many: Parallel Prompting for Shared-Context LLM Inference.</b><br>
-        <u>Zekun Zhao</u>, Jeffrey Flanigan. Preprint, 2026.<br>
-        An earlier version: <i>Parallel Prompting: Fast LLM Inference for Shared-Context, Short-to-Moderate Output.</i> BayLearn Symposium 2025.<br>
-        [<a href="https://jlab-nlp.github.io/parallel-prompting/">Project page</a>]
-        [<a href="https://github.com/jlab-nlp/parallel-prompting">Code</a>]
-    </li>
-    <li>
-        <b>Autoformalizing Chain of Thought: Representation, Verification, and Logical Shortcuts.</b><br>
-        <u>Zekun Zhao</u>, Zilong Li, Jon Cai, Federico Ortega-Riba, Martha Palmer, James Martin, Jeffrey Flanigan.
-        NeurIPS 2026 Workshop on Linguistic Principles for Foundation Models.
-    </li>
-    <li>
-        <b>Building Bridges between Student and Curricular Language: Creating a Corpus of Abstract Meaning Representations for the Classroom.</b><br>
-        Kristin Wright-Bettner, Jon Cai, <u>Zekun Zhao</u>, James H. Martin, Jeffrey Flanigan, Martha Palmer, Stelios Piperidis, N&uacute;ria Bel, Henk van den Heuvel, Nancy Ide.
-        LREC 2026, pages 11960&ndash;11971.
-    </li>
-    <li>
-        <b>LiDARR: Linking Document AMRs with Referents Resolvers.</b><br>
-        Jon Cai, Kristin Wright-Bettner, <u>Zekun Zhao</u>, Shafiuddin Rehan Ahmed, Abijith Trichur Ramachandran, Jeffrey Flanigan, Martha Palmer, James H. Martin.
-        ACL 2025 System Demonstrations, pages 426&ndash;435.
-        [<a href="https://aclanthology.org/2025.acl-demo.41.pdf">Paper</a>]
-    </li>
-</ul>
-</div>
-
-<br><br>
-
-<div id="projects">
-<h2>Research Projects</h2>
-<table width="100%">
-    <tr>
-        <td width="320" valign="top">
-            <a href="https://jlab-nlp.github.io/parallel-prompting/"><img src="pic/parallel_prompting.png" width="300px" style="box-shadow: 2px 2px 6px #aaa"></a>
-        </td>
-        <td valign="top">
-            <p>
-                <b>Fast LLM Inference with Parallel Prompting</b> (2025&ndash;present)<br>
-                Decodes many questions about one long document as parallel streams of a single request, so each decode step reads the document's KV cache once instead of once per question.
-                Built into SGLang with an in-kernel stream mask, CUDA-graph decoding and continuous batching; 3.7&times; faster than stock SGLang on an A100 and 5.9&ndash;6.0&times; on an RTX A6000.
-            </p>
-            <p>
-            [<a href="https://jlab-nlp.github.io/parallel-prompting/">Project page</a>]
-            [<a href="https://github.com/jlab-nlp/parallel-prompting">Code</a>]
-            </p>
-        </td>
-    </tr>
-    <tr>
-        <td width="320" valign="top"></td>
-        <td valign="top">
-            <p>
-                <b>Reinforcement Learning for Efficient Formal CoT Verification</b> (2025&ndash;2026)<br>
-                A GRPO pipeline that trains Qwen2.5-Coder to translate natural-language chain-of-thought into Lean 4 theorem statements, with a reward that combines Lean 4 compiler checks and an LLM judge of faithfulness.
-                An SFT warm-up raised the share of test statements that compile from 6% to 39% for a 0.5B model, and caching and parallel judge calls made each training step 3&times; faster.
-            </p>
-        </td>
-    </tr>
-</table>
-</div>
-
-<br><br>
-
-<div id="reports">
-<h2>Reports</h2>
-<table id="tbPublications" width="100%">
-	<tr>
-        <td width="100%">
-            <p>
-                <b>Mimic Face</b>: A Real-time Web Application for 3D Face Animation <br>
-            <p></p>
-            <p>
-            [<a href="https://www.youtube.com/watch?v=ku1Mf5ngtYM">Video</a>]
-	    [<a href="https://people.ucsc.edu/~zzhao99/Project_Presentation/driver.html">Use FireFox for this Demo</a>]
-		    
-            </p>
-
-        </td>
-    </tr>
-
-    <tr>
-        <td width="100%">
-            <p>
-                <b>Voting Loss Function</b>: a voting mechanism to measure how bad the current estimate is in respect to smoothness and accuracy <br>
-            <p></p>
-            <p>
-            [<a href="/reports/CMPS_218_ZekunZhao.pdf">Report</a>]
-            </p>
-        </td>
-    </tr>
-
-    <tr>
-        <td width="100%">
-            <p>
-                <b>Gender Obfuscation in Text</b>: This project is aiming for protecting the privacy. <br>
-            <p></p>
-            <p>
-            [<a href="/reports/Gender_Obfuscation.pdf">Report</a>]
-            </p>
-        </td>
-    </tr>
-
-    <tr>
-        <td width="100%">
-            <p>
-                <b>Dialogue state traking</b>: This project is aiming for tracking the history of multi-domain dialogue. <br>
-            <p></p>
-            <p>
-            [<a href="/reports/CSE_244.pdf">Report</a>]
-            </p>
-        </td>
-    </tr>
-
-    <tr>
-        <td width="100%">
-            <p>
-                A Survey on <b>Probabilistic Programming</b> in the Context of
-Neural Networks <br>
-            <p></p>
-            <p>
-            [<a href="/reports/CMPS_203.pdf">Report</a>]
-            </p>
-        </td>
-    </tr>
-    <tr>
-        <td width="100%">
-            <p>
-               undergraduate and master reprot <br>
-            <p></p>
-            <p>
-            [<a href="/reports/一种挥手识别系统的设计与实现.pdf">BS Report</a>]
-		[<a href="/reports/ms_report.pdf">MS Report</a>]
-            </p>
-        </td>
-    </tr>
-</table>
-</div>
-
-<br><br>
-
-<div id="products">
-<h2>Products</h2>
-<table>
-    <tr>
-<!--         <td width="306">
-            <img src="https://people.ucsc.edu/~zzhao99/main.png" width="285px" height="140px" style="box-shadow: 4px 4px 8px #888">
-        </td> -->
-        <td>
-            <p>
-                <b>How does our body feel?</b>: Human Health Data Visualization <br>
-            </p>
-            <p>
-            [<a href="/reports/final261.pdf">Report</a>]
-            [<a href="https://users.soe.ucsc.edu/~pang/261/w19/projects/">Award</a>]
-<!-- 	    [<a href="https://people.ucsc.edu/~zzhao99/CMPS261/examples/svg-area-heatmap/">Demo</a>] -->
-            </p>
-        </td>
-    </tr>
-
-
-</table>
-
-</div>
-
-<br><br>
-
-
-<div id='teaching'>
-<h2>Teaching</h2>
-<table id="tbTeaching" border="0" width="100%">
-    <tbody>
-	<tr>
-            <td> 2020</td>
-            <td>Fall</td>
-            <td>Teaching Assistant</td>
-            <td><a href="https://classes.soe.ucsc.edu/nlp201/Fall20/">NLP201: Natural Language Processing</a></td>
-        </tr>
-        <tr>
-        <tr>
-            <td> 2020</td>
-            <td>Spring</td>
-            <td>Teaching Assistant</td>
-            <td><a href="https://cse102-spring20-01.courses.soe.ucsc.edu/">CSE102: Introduction to Analysis of Algorithms</a></td>
-        </tr>
-        <tr>
-            <td> 2020</td>
-            <td>Winter</td>
-            <td>Teaching Assistant</td>
-            <td><a href="https://classes.soe.ucsc.edu/cse102/Winter20-02/">CSE102: Introduction to Analysis of Algorithms</a></td>
-        </tr>
-        <tr>
-            <td> 2019</td>
-            <td>Fall</td>
-            <td>Teaching Assistant</td>
-            <td><a href="https://classes.soe.ucsc.edu/cse015/Fall19/">CSE15: Introduction to Data Structures</a></td>
-        </tr>
-    </tbody>
-</table>
-</div>
-
-
-<br><br>
-<div id="service">
-<h2>Service</h2>
-<li>
-    <b>Volunteer: </b>
+<section id="projects">
+  <h2>Earlier projects</h2>
+  <details>
+    <summary>Course projects and reports</summary>
     <ul>
-        <li>Session Volunteer, ACL 2020</li>
-        <li>Conference Volunteer, CVM 2017 <a href="http://iccvm.org/2017/"> *</a>   <a href="https://mmcheng.net/cvm17/ "> *</a>  </li>
+      <li><b>Mimic Face</b>: a real-time web application for 3D face animation. [<a href="https://www.youtube.com/watch?v=ku1Mf5ngtYM">Video</a>]</li>
+      <li><b>How does our body feel?</b> Human health data visualization. [<a href="reports/final261.pdf">Report</a>] [<a href="https://users.soe.ucsc.edu/~pang/261/w19/projects/">Award</a>]</li>
+      <li><b>Voting loss function</b>: a voting mechanism to measure an estimate's smoothness and accuracy. [<a href="reports/CMPS_218_ZekunZhao.pdf">Report</a>]</li>
+      <li><b>Gender obfuscation in text</b> for privacy protection. [<a href="reports/Gender_Obfuscation.pdf">Report</a>]</li>
+      <li><b>Multi-domain dialogue state tracking.</b> [<a href="reports/CSE_244.pdf">Report</a>]</li>
+      <li>A survey on <b>probabilistic programming</b> in the context of neural networks. [<a href="reports/CMPS_203.pdf">Report</a>]</li>
+      <li>Undergraduate and master's reports. [<a href="reports/一种挥手识别系统的设计与实现.pdf">B.S. report</a>] [<a href="reports/ms_report.pdf">M.S. report</a>]</li>
     </ul>
-</li>
-</div>
+  </details>
+</section>
 
+</main>
 
+<footer>
+  <div class="wrap">&copy; 2026 Zekun Zhao &middot; Last updated November 2026</div>
+</footer>
 
-<div id="footer">
-	<!-- <div id="footer-text"></div> -->
-<p>
-<center>
-    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=cbe090&w=300&d=aJJ1wUAUT3iAzbbM3So9Rj0rh8-XOWIxZRgWKqOvcDk&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
-
-    <br>
-    &copy;
-</center>
-</p>
-
-</div>
-
-
-
-</div>
 </body>
 </html>
