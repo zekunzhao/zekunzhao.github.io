@@ -39,11 +39,13 @@
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
     <div id="layout-menu">
         <a href="#">Home</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
         <a href="#reports">Reports</a>
         <a href="#products">Products</a>
         <a href="#teaching">Teaching</a>
         <a href="#service">Service</a>
-        <a href="/reports/CV_ZEKUN_ZHAO_AUG31_2025.pdf">CV</a>
+        <a href="/reports/CV_Zekun_Zhao_2026.pdf">CV</a>
     </div>
 </nav>
 
@@ -83,21 +85,23 @@
 
 <div id="bio">
 <h2>Bio</h2>
-Zekun Zhao is a Ph.D. student working with Professor <a href="https://jflanigan.github.io/ ">Jeffrey Flanigan</a> in the Computer Science and Engineering department at <a href="https://www.soe.ucsc.edu/">UC Santa Cruz</a>. His research focuses 
-	on large language model inference with knowledge-based reasoning.
+Zekun Zhao is a Ph.D. student working with Professor <a href="https://jflanigan.github.io/ ">Jeffrey Flanigan</a> in the Computer Science and Engineering department at <a href="https://www.soe.ucsc.edu/">UC Santa Cruz</a>. His research focuses
+	on efficient large language model inference and on verifying the reasoning of language models.
 He obtained his B.Eng. at <a href="http://en.nankai.edu.cn/">Nankai University </a> in Intelligent Science and Technology.
 He worked at  <a href="https://mmcheng.net/">Ming-Ming Cheng</a>'s Lab  and   <a href="https://aien.nankai.edu.cn/2021/1108/c28091a412673/page.htm ">Feng Duan</a>'s Lab.
 <!-- <br><br> -->
 
 <h3>Research Interests</h3>
-Zekun's research interests in developing methods 
-	that enhance both the understanding and generation of natural language with an emphasis on efficient and effective performance.
+Zekun's research focuses on model inference, with an emphasis on efficiency and effectiveness.
 <ul>
     <li>
-        Natural Language Processing (natural language grounding, knowledge-based reasoning, inference speedup)
+        Efficient LLM inference (shared-context decoding, serving engines such as SGLang and vLLM, attention kernels)
     </li>
     <li>
-        Verification in AI (formal verification for generative AI, neural theorem proving)
+        Verification in AI (autoformalizing chain-of-thought into Lean 4, reinforcement learning with verifier rewards)
+    </li>
+    <li>
+        Natural Language Processing (natural language grounding, knowledge-based reasoning)
     </li>
     <li>
         Machine Learning (deep learning, self-supervised learning, reinforcement learning, multimodal machine learning)
@@ -114,6 +118,7 @@ Zekun's research interests in developing methods
 <h2>News</h2>
 <div style="overflow-y: scroll; height:120px;">
 <table>
+		<tr valign="top"> <td>[11/2026] </td> <td> Released <a href="https://jlab-nlp.github.io/parallel-prompting/">Parallel Prompting</a>: paper, code and project page. </td></tr>
 		<tr valign="top"> <td>[07/2025] </td> <td> Join in ACL 2025, Vienna. </td></tr>
 		<tr valign="top"> <td>[06/2024] </td> <td> Join UMR Parsing Workshop 2024 at CU Boulder. </td></tr>
 		<tr valign="top"> <td>[07/2022] </td> <td> Join NAACL 2022 in Seattle. </td></tr>
@@ -125,23 +130,75 @@ Zekun's research interests in developing methods
 
 <br><br>
 
+<div id="publications">
+<h2>Publications</h2>
+<ul>
+    <li>
+        <b>Read Once, Answer Many: Parallel Prompting for Shared-Context LLM Inference.</b><br>
+        <u>Zekun Zhao</u>, Jeffrey Flanigan. Preprint, 2026.<br>
+        An earlier version: <i>Parallel Prompting: Fast LLM Inference for Shared-Context, Short-to-Moderate Output.</i> BayLearn Symposium 2025.<br>
+        [<a href="https://jlab-nlp.github.io/parallel-prompting/">Project page</a>]
+        [<a href="https://github.com/jlab-nlp/parallel-prompting">Code</a>]
+    </li>
+    <li>
+        <b>Autoformalizing Chain of Thought: Representation, Verification, and Logical Shortcuts.</b><br>
+        <u>Zekun Zhao</u>, Zilong Li, Jon Cai, Federico Ortega-Riba, Martha Palmer, James Martin, Jeffrey Flanigan.
+        NeurIPS 2026 Workshop on Linguistic Principles for Foundation Models.
+    </li>
+    <li>
+        <b>Building Bridges between Student and Curricular Language: Creating a Corpus of Abstract Meaning Representations for the Classroom.</b><br>
+        Kristin Wright-Bettner, Jon Cai, <u>Zekun Zhao</u>, James H. Martin, Jeffrey Flanigan, Martha Palmer, Stelios Piperidis, N&uacute;ria Bel, Henk van den Heuvel, Nancy Ide.
+        LREC 2026, pages 11960&ndash;11971.
+    </li>
+    <li>
+        <b>LiDARR: Linking Document AMRs with Referents Resolvers.</b><br>
+        Jon Cai, Kristin Wright-Bettner, <u>Zekun Zhao</u>, Shafiuddin Rehan Ahmed, Abijith Trichur Ramachandran, Jeffrey Flanigan, Martha Palmer, James H. Martin.
+        ACL 2025 System Demonstrations, pages 426&ndash;435.
+        [<a href="https://aclanthology.org/2025.acl-demo.41.pdf">Paper</a>]
+    </li>
+</ul>
+</div>
+
+<br><br>
+
+<div id="projects">
+<h2>Research Projects</h2>
+<table width="100%">
+    <tr>
+        <td width="320" valign="top">
+            <a href="https://jlab-nlp.github.io/parallel-prompting/"><img src="pic/parallel_prompting.png" width="300px" style="box-shadow: 2px 2px 6px #aaa"></a>
+        </td>
+        <td valign="top">
+            <p>
+                <b>Fast LLM Inference with Parallel Prompting</b> (2025&ndash;present)<br>
+                Decodes many questions about one long document as parallel streams of a single request, so each decode step reads the document's KV cache once instead of once per question.
+                Built into SGLang with an in-kernel stream mask, CUDA-graph decoding and continuous batching; 3.7&times; faster than stock SGLang on an A100 and 5.9&ndash;6.0&times; on an RTX A6000.
+            </p>
+            <p>
+            [<a href="https://jlab-nlp.github.io/parallel-prompting/">Project page</a>]
+            [<a href="https://github.com/jlab-nlp/parallel-prompting">Code</a>]
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td width="320" valign="top"></td>
+        <td valign="top">
+            <p>
+                <b>Reinforcement Learning for Efficient Formal CoT Verification</b> (2025&ndash;2026)<br>
+                A GRPO pipeline that trains Qwen2.5-Coder to translate natural-language chain-of-thought into Lean 4 theorem statements, with a reward that combines Lean 4 compiler checks and an LLM judge of faithfulness.
+                An SFT warm-up raised the share of test statements that compile from 6% to 39% for a 0.5B model, and caching and parallel judge calls made each training step 3&times; faster.
+            </p>
+        </td>
+    </tr>
+</table>
+</div>
+
+<br><br>
+
 <div id="reports">
 <h2>Reports</h2>
 <table id="tbPublications" width="100%">
 	<tr>
-        <td width="100%">
-            <p>
-                <b>LiDARR</b>: Linking Document AMRs with Referents Resolvers <br>
-            <p></p>
-            <p>
-            [<a href="https://aclanthology.org/2025.acl-demo.41.pdf">Paper</a>]
-	    [<a href="https://2025.aclweb.org/">ACL 2025</a>]
-		    
-            </p>
-
-        </td>
-    </tr>
-    <tr>
         <td width="100%">
             <p>
                 <b>Mimic Face</b>: A Real-time Web Application for 3D Face Animation <br>
